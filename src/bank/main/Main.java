@@ -10,10 +10,11 @@ public class Main
 {
 
      private static Scanner sc=new Scanner(System.in);
+    static UserService userservice=new UserService();
     public static void main(String[] args)
     {
         Main main=new Main();
-         UserService userservice=new UserService();
+
          while(true)
          {
              System.out.println("Enter your username:");
@@ -46,6 +47,7 @@ public class Main
              System.out.println("1.Exit/logout");
              System.out.println("2.Create Customer account");
              int choice=sc.nextInt();
+             sc.nextLine();
 
              switch(choice)
              {
@@ -55,6 +57,7 @@ public class Main
                      break;
                  case 2:
                      System.out.println("Add new customer account");
+                     addNewCustomer();
                      break;
                  default:
                      System.out.println("Invalid choice");
@@ -68,12 +71,21 @@ public class Main
     }
     public void addNewCustomer()
     {
-        System.out.println("Enter your username:");
+        System.out.println("Enter your first username:");
         String username=sc.nextLine();
         System.out.println("Enter your password:");
         String password=sc.nextLine();
         System.out.println("Enter contact number:");
         String contact=sc.nextLine();
+        boolean result=userservice.addNewCustomer(username,password,contact);
+        if(result==true)
+        {
+            System.out.println("Your account has been created successfully");
+        }
+        else
+        {
+            System.out.println("Your account  creation failed");
+        }
 
     }
     private void initCustomer()
