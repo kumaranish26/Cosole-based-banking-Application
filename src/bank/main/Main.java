@@ -71,11 +71,11 @@ public class Main
     }
     public void addNewCustomer()
     {
-        System.out.println("Enter your first username:");
+        System.out.println("Enter the username:");
         String username=sc.nextLine();
-        System.out.println("Enter your password:");
+        System.out.println("Enter the password:");
         String password=sc.nextLine();
-        System.out.println("Enter contact number:");
+        System.out.println("Enter customer's contact number:");
         String contact=sc.nextLine();
         boolean result=userservice.addNewCustomer(username,password,contact);
         if(result==true)
