@@ -84,7 +84,7 @@ public class Main
         }
         else
         {
-            System.out.println("Your account  creation failed");
+            System.out.println("Customer's account  creation has been failed");
         }
 
     }
