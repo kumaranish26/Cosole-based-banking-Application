@@ -14,4 +14,8 @@ public class UserService {
     public boolean addNewCustomer(String username,String password,String contact){
         return userRepository.addNewCustomer(username,password,contact);
     }
+    public String CheckAccountBalance(String userid)
+    {
+          return userRepository.CheckAccountBalance(userid);
+    }
 }

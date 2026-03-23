@@ -21,6 +21,19 @@ public class UserRepository
          users.add(user2);
          users.add(user3);
      }
+    public String  CheckAccountBalance(String userid)
+    {
+        List<User>result=users.stream().filter(user -> user.getUsername().equals(userid)).collect(Collectors.toList());
+
+        if(!result.isEmpty())
+        {
+            return result.get(0).getAccountbalance();
+        }
+        else
+        {
+            return null;
+        }
+    }
      public void printUsers()
      {
          System.out.println(users);

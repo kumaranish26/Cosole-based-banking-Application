@@ -1,6 +1,5 @@
 package bank.main;
 
-
 import bank.entity.User;
 import bank.service.UserService;
 
@@ -9,7 +8,8 @@ import java.util.Scanner;
 public class Main
 {
 
-     private static Scanner sc=new Scanner(System.in);
+    private static Scanner sc=new Scanner(System.in);
+    static Main main=new Main();
     static UserService userservice=new UserService();
     public static void main(String[] args)
     {
@@ -28,7 +28,7 @@ public class Main
              }
               if(user!=null&&user.getRole().equals("user"))
              {
-                 main.initCustomer();
+                 main.initCustomer(user);
              }
              else
              {
@@ -57,7 +57,7 @@ public class Main
                      break;
                  case 2:
                      System.out.println("Add new customer account");
-                     addNewCustomer();
+                     main.addNewCustomer();
                      break;
                  default:
                      System.out.println("Invalid choice");
@@ -88,9 +88,40 @@ public class Main
         }
 
     }
-    private void initCustomer()
+    private void initCustomer(User user)
     {
+        boolean flag=true;
+        while(flag)
+        {
+            System.out.println("1. Exit or  logout");
+            System.out.println("2. Check Account balance");
+            int choice=sc.nextInt();
 
+            switch(choice)
+            {
+                case 1:
+                    flag=false;
+                    System.out.println("You are logged out successfully");
+                    break;
+
+                    case 2:
+                       String balance= main.CheckAccountBalance(user.getUsername());
+                       if(balance!=null)
+                       {
+                           System.out.println("Your account balance is "+balance);
+                       }
+                       else
+                       {
+                           System.out.println("recheck your account details");
+                       }
+                    default:
+                        System.out.println("Invalid choice");
+            }
+        }
         System.out.println("You are an user");
+    }
+    private String CheckAccountBalance(String userid)
+    {
+         return userservice.CheckAccountBalance(userid);
     }
 }
