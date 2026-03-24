@@ -2,7 +2,6 @@ package bank.main;
 
 import bank.entity.User;
 import bank.service.UserService;
-
 import java.util.Scanner;
 
 public class Main
@@ -95,6 +94,7 @@ public class Main
         {
             System.out.println("1. Exit or  logout");
             System.out.println("2. Check Account balance");
+            System.out.println("3. Fund Transfer");
             int choice=sc.nextInt();
 
             switch(choice)

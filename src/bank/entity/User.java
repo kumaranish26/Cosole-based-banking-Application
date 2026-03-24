@@ -7,7 +7,8 @@ public class User {
     private String role;
     private String accountbalance;
 
-    public User(String username, String password, String contactnumber, String role, String accountbalance) {
+    public User(String username, String password, String contactnumber, String role, String accountbalance)
+    {
         this.username = username;
         this.password = password;
         this.contactnumber = contactnumber;
