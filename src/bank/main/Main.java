@@ -112,13 +112,26 @@ public class Main
                        }
                        else
                        {
-                           System.out.println("recheck your account details");
+                           System.out.println("Recheck your account details");
                        }
-                    default:
+                case 3:
+                    main.FundTransfer();
+                      break;
+                       default:
                         System.out.println("Invalid choice");
             }
         }
         System.out.println("You are an user");
+    }
+    private void FundTransfer()
+    {
+        System.out.println("Enter payee userid");
+        String payeeAccountId=sc.nextLine();
+
+    }
+    public void getUSer(String userid)
+    {
+
     }
     private String CheckAccountBalance(String userid)
     {
