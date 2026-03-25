@@ -2,6 +2,8 @@ package bank.main;
 
 import bank.entity.User;
 import bank.service.UserService;
+
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main
@@ -131,7 +133,11 @@ public class Main
     }
     public void getUSer(String userid)
     {
-
+        System.out.println("User details are here");
+    }
+    public void anish()
+    {
+        System.out.println("Enter payee userid");
     }
     private String CheckAccountBalance(String userid)
     {
