@@ -21,6 +21,18 @@ public class UserRepository
          users.add(user2);
          users.add(user3);
      }
+    public User getUser(String userId)
+    {
+        List<User>result=users.stream().filter(user->user.getUsername().equals(userId)).collect(Collectors.toList());
+        if(result.size()!=0)
+        {
+            return result.get(0);
+        }
+        else
+        {
+            return null;
+        }
+    }
     public String  CheckAccountBalance(String userid)
     {
         List<User>result=users.stream().filter(user -> user.getUsername().equals(userid)).collect(Collectors.toList());

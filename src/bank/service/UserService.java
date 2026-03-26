@@ -18,4 +18,9 @@ public class UserService {
     {
           return userRepository.CheckAccountBalance(userid);
     }
+    public User getUser(String userId)
+    {
+        return userRepository.getUser(userId);
+    }
 }
+

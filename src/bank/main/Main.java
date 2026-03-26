@@ -128,21 +128,26 @@ public class Main
     private void FundTransfer()
     {
         System.out.println("Enter payee userid");
-        String payeeAccountId=sc.nextLine();
+        String payeeAccountId=sc.next();
+        User user=getUSer(payeeAccountId);
+
+
+        if(user==null)
+        {
+            System.out.println("Please Enter valid user name");
+        }
+        else
+        {
+            System.out.println("Valid Username");
+
+        }
 
     }
-    public void getUSer(String userid)
+    public User getUSer(String userid)
     {
-        System.out.println("User details are here");
+        return userservice.getUser(userid);
     }
-    public void anish()
-    {
-        System.out.println("Enter payee userid");
-    }
-    public void Sakshi()
-    {
-        System.out.println("Enter payee userid");
-    }
+
     private String CheckAccountBalance(String userid)
     {
          return userservice.CheckAccountBalance(userid);
