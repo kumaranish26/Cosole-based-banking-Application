@@ -132,14 +132,15 @@ public class Main
         User user=getUSer(payeeAccountId);
 
 
-        if(user==null)
+        if(user!=null)
         {
-            System.out.println("Please Enter valid user name");
+            System.out.println("Enter Amount to transfer");
+            double amount=sc.nextDouble();
         }
         else
         {
-            System.out.println("Valid Username");
 
+            System.out.println("Please Enter valid user name");
         }
 
     }
@@ -154,6 +155,6 @@ public class Main
     }
     private void Anish()
     {
-        System.out.printf("Enter payee userid");
+        System.out.println("Enter payee userid");
     }
 }
