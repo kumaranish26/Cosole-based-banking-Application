@@ -14,9 +14,9 @@ public class UserRepository
 {
      private static Set<User> users = new HashSet<User>();
      static {
-         User user1=new User("admin","admin","12345","admin","0.00");
-         User user2=new User("user1","user1","123456","user","1000.00");
-         User user3=new User("user2","user2","123457","user","2000.00");
+         User user1=new User("admin","admin","12345","admin",0.00);
+         User user2=new User("user1","user1","123456","user",1000.00);
+         User user3=new User("user2","user2","123457","user",2000.00);
          users.add(user1);
          users.add(user2);
          users.add(user3);
@@ -33,7 +33,7 @@ public class UserRepository
             return null;
         }
     }
-    public String  CheckAccountBalance(String userid)
+    public Double  CheckAccountBalance(String userid)
     {
         List<User>result=users.stream().filter(user -> user.getUsername().equals(userid)).collect(Collectors.toList());
 
@@ -71,7 +71,7 @@ public class UserRepository
      }
         public boolean addNewCustomer(String username,String password,String contact)
         {
-            User user=new User(username,password,contact,"user","500.00");
+            User user=new User(username,password,contact,"user",500.00);
             return users.add(user);
         }
 }
