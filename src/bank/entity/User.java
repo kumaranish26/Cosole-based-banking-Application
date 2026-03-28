@@ -5,9 +5,9 @@ public class User {
     private String password;
     private String contactnumber;
     private String role;
-    private String accountbalance;
+    private Double accountbalance;
 
-    public User(String username, String password, String contactnumber, String role, String accountbalance)
+    public User(String username, String password, String contactnumber, String role, Double accountbalance)
     {
         this.username = username;
         this.password = password;
@@ -48,11 +48,11 @@ public class User {
         this.role = role;
     }
 
-    public String getAccountbalance() {
+    public Double getAccountbalance() {
         return accountbalance;
     }
 
-    public void setAccountbalance(String accountbalance) {
+    public void setAccountbalance(Double accountbalance) {
         this.accountbalance = accountbalance;
     }
 }

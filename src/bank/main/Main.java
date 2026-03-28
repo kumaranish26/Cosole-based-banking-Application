@@ -107,8 +107,8 @@ public class Main
                     break;
 
                     case 2:
-                       String balance= main.CheckAccountBalance(user.getUsername());
-                       if(balance!=null)
+                       double balance= main.CheckAccountBalance(user.getUsername());
+                       if(balance!=0)
                        {
                            System.out.println("Your account balance is "+balance);
                        }
@@ -117,7 +117,7 @@ public class Main
                            System.out.println("Recheck your account details");
                        }
                 case 3:
-                    main.FundTransfer();
+                    main.FundTransfer(user);
                       break;
                        default:
                         System.out.println("Invalid choice");
@@ -125,7 +125,7 @@ public class Main
         }
         System.out.println("You are an user");
     }
-    private void FundTransfer()
+    private void FundTransfer(User userDetails)
     {
         System.out.println("Enter payee userid");
         String payeeAccountId=sc.next();
@@ -136,6 +136,15 @@ public class Main
         {
             System.out.println("Enter Amount to transfer");
             double amount=sc.nextDouble();
+            double userAccountBalance=CheckAccountBalance(userDetails.getUsername());
+            if(userAccountBalance!=0)
+            {
+
+            }
+            else
+            {
+                System.out.println("Insufficient balance"+userAccountBalance);
+            }
         }
         else
         {
@@ -149,12 +158,9 @@ public class Main
         return userservice.getUser(userid);
     }
 
-    private String CheckAccountBalance(String userid)
+    private Double CheckAccountBalance(String userid)
     {
          return userservice.CheckAccountBalance(userid);
     }
-    private void Anish()
-    {
-        System.out.println("Enter payee userid");
-    }
+
 }
