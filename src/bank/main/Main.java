@@ -139,6 +139,14 @@ public class Main
             double userAccountBalance=CheckAccountBalance(userDetails.getUsername());
             if(userAccountBalance!=0)
             {
+                if(userAccountBalance>=amount)
+                {
+                    System.out.println("Fund transfer is successful");
+                }
+                else
+                {
+                    System.out.println("Insufficient balance"+userAccountBalance);
+                }
 
             }
             else
