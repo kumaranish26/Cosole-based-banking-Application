@@ -22,5 +22,10 @@ public class UserService {
     {
         return userRepository.getUser(userId);
     }
+    public boolean transferAmount(String from,String to,double amount)
+    {
+        UserRepository userRepository=new UserRepository();
+         return userRepository.transferAmount(from, to, amount);
+    }
 }
 
