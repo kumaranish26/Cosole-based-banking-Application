@@ -21,6 +21,41 @@ public class UserRepository
          users.add(user2);
          users.add(user3);
      }
+
+    public  boolean transferAmount(String from, String to, double amount) {
+        boolean isDebit = debit(from, amount);
+        boolean isCredit = credit(to, amount);
+        return isDebit && isCredit;
+    }
+    private boolean debit(String from,double amount)
+    {
+           User user=getUser(from);
+           if(user!=null)
+           {
+               double accountBalance=user.getAccountbalance();
+               //user.remove(from);
+               double finalBalance=accountBalance-amount;
+               user.setAccountbalance(finalBalance);
+               //return users.add(user);
+               return true;
+           }
+           return false;
+
+    }
+    private boolean credit(String to,double amount)
+    {
+        User user=getUser(to);
+        if(user!=null)
+        {
+            double accountBalance=user.getAccountbalance();
+            // user.remove(from);
+            double finalBalance=accountBalance+amount;
+            user.setAccountbalance(finalBalance);
+            //return users.add(user);
+            return true;
+        }
+        return false;
+    }
     public User getUser(String userId)
     {
         List<User>result=users.stream().filter(user->user.getUsername().equals(userId)).collect(Collectors.toList());

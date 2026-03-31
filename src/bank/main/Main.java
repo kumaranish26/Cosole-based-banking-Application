@@ -116,6 +116,7 @@ public class Main
                        {
                            System.out.println("Recheck your account details");
                        }
+                       break;
                 case 3:
                     main.FundTransfer(user);
                       break;
@@ -137,11 +138,21 @@ public class Main
             System.out.println("Enter Amount to transfer");
             double amount=sc.nextDouble();
             double userAccountBalance=CheckAccountBalance(userDetails.getUsername());
-            if(userAccountBalance!=0)
+            if(userAccountBalance>=0)
             {
                 if(userAccountBalance>=amount)
                 {
-                    System.out.println("Fund transfer is successful");
+                    UserService userservice=new UserService();
+                   boolean result= userservice.transferAmount(userDetails.getUsername(),payeeAccountId,amount);
+                    if(result==true)
+                    {
+                        System.out.println("Fund transfer is successful");
+                    }
+                    else
+                    {
+                        System.out.println("Fund transfer is failed");
+                    }
+
                 }
                 else
                 {
