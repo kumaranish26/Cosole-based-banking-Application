@@ -136,8 +136,8 @@ public class Main {
             } else {
                 System.out.println("Insufficient balance" + userAccountBalance);
             }
-        } else {
-
+        } else
+        {
             System.out.println("Please Enter valid user name");
         }
 
