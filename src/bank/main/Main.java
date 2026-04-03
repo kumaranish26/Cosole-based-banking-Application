@@ -1,8 +1,6 @@
 package bank.main;
-
 import bank.entity.User;
 import bank.service.UserService;
-
 import java.sql.SQLOutput;
 import java.util.Scanner;
 
