@@ -1,5 +1,6 @@
 package bank.repository;
 //package bank.entity.User;
+import bank.entity.Transaction;
 import bank.entity.User;
 
 import java.util.HashMap;
@@ -23,11 +24,11 @@ public class UserRepository
      }
 
     public  boolean transferAmount(String from, String to, double amount) {
-        boolean isDebit = debit(from, amount);
-        boolean isCredit = credit(to, amount);
+        boolean isDebit = debit(from, amount,to);
+        boolean isCredit = credit(to, amount,from);
         return isDebit && isCredit;
     }
-    private boolean debit(String from,double amount)
+    private boolean debit(String from,double amount,String to)
     {
            User user=getUser(from);
            if(user!=null)
@@ -38,11 +39,21 @@ public class UserRepository
                user.setAccountbalance(finalBalance);
                //return users.add(user);
                return true;
+
+               Transaction transaction=new Transaction(
+                          java.time.LocalDate.now(),
+                          from,
+                          amount,
+                          "debit",
+                          String.valueOf(accountBalance),
+                          String.valueOf(finalBalance)
+               );
+
            }
            return false;
 
     }
-    private boolean credit(String to,double amount)
+    private boolean credit(String to,double amount,String from)
     {
         User user=getUser(to);
         if(user!=null)
