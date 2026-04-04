@@ -9,15 +9,25 @@ public class Transaction {
     private String transactionType;
     private String initialBalance;
     private String finalBalance;
+    private String transactionPerformedBy;
 
 
-    public Transaction(LocalDate transactionDate, String transactionUserId, Double transactionAmount, String transactionType, String initialBalance, String finalBalance) {
+    public Transaction(LocalDate transactionDate, String transactionUserId, Double transactionAmount, String transactionType, String initialBalance, String finalBalance, String transactionPerformedBy) {
         this.transactionDate = transactionDate;
         this.transactionUserId = transactionUserId;
         this.transactionAmount = transactionAmount;
         this.transactionType = transactionType;
         this.initialBalance = initialBalance;
         this.finalBalance = finalBalance;
+        this.transactionPerformedBy = transactionPerformedBy;
+    }
+
+    public String getTransactionPerformedBy() {
+        return transactionPerformedBy;
+    }
+
+    public void setTransactionPerformedBy(String transactionPerformedBy) {
+        this.transactionPerformedBy = transactionPerformedBy;
     }
 
     public LocalDate getTransactionDate() {
@@ -68,5 +78,16 @@ public class Transaction {
         this.finalBalance = finalBalance;
     }
 
-
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "transactionDate=" + transactionDate +
+                ", transactionUserId='" + transactionUserId + '\'' +
+                ", transactionAmount=" + transactionAmount +
+                ", transactionType='" + transactionType + '\'' +
+                ", initialBalance='" + initialBalance + '\'' +
+                ", finalBalance='" + finalBalance + '\'' +
+                ", transactionPerformedBy='" + transactionPerformedBy + '\'' +
+                '}';
+    }
 }
