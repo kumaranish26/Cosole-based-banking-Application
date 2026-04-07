@@ -7,6 +7,7 @@ public class User {
     private String role;
     private Double accountbalance;
 
+
     public User(String username, String password, String contactnumber, String role, Double accountbalance)
     {
         this.username = username;
