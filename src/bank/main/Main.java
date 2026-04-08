@@ -148,5 +148,9 @@ public class Main {
     private Double CheckAccountBalance(String userid) {
         return userservice.CheckAccountBalance(userid);
     }
+    private void Anish()
+    {
+        System.out.println("Enter amount to transfer");
+    }
 
 }
