@@ -3,17 +3,15 @@ package bank.repository;
 import bank.entity.Transaction;
 import bank.entity.User;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import java.util.List;
 
 
 public class UserRepository
 {
      private static Set<User> users = new HashSet<User>();
+     private static List<Transaction> transactions = new ArrayList<>();
      static {
          User user1=new User("admin","admin","12345","admin",0.00);
          User user2=new User("user1","user1","123456","user",1000.00);
@@ -38,7 +36,7 @@ public class UserRepository
                double finalBalance=accountBalance-amount;
                user.setAccountbalance(finalBalance);
                //return users.add(user);
-               return true;
+
 
                Transaction transaction=new Transaction(
                           java.time.LocalDate.now(),
@@ -46,9 +44,12 @@ public class UserRepository
                           amount,
                           "debit",
                           String.valueOf(accountBalance),
-                          String.valueOf(finalBalance)
+                          String.valueOf(finalBalance),
+                           to
                );
-
+               transactions.add(transaction);
+               System.out.println(transaction);
+               return true;
            }
            return false;
 
@@ -63,6 +64,17 @@ public class UserRepository
             double finalBalance=accountBalance+amount;
             user.setAccountbalance(finalBalance);
             //return users.add(user);
+            Transaction transaction=new Transaction(
+                    java.time.LocalDate.now(),
+                    to,
+                    amount,
+                    "credit",
+                    String.valueOf(accountBalance),
+                    String.valueOf(finalBalance),
+                    from
+            );
+            transactions.add(transaction);
+            System.out.println(transaction);
             return true;
         }
         return false;
