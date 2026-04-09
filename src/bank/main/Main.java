@@ -107,7 +107,8 @@ public class Main {
         System.out.println("You are an user");
     }
 
-    private void FundTransfer(User userDetails) {
+    private void FundTransfer(User userDetails)
+    {
         System.out.println("Enter payee userid");
         String payeeAccountId = sc.next();
         User user = getUSer(payeeAccountId);
@@ -127,11 +128,13 @@ public class Main {
                         System.out.println("Fund transfer is failed");
                     }
 
-                } else {
+                } else
+                {
                     System.out.println("Insufficient balance" + userAccountBalance);
                 }
 
-            } else {
+            } else
+            {
                 System.out.println("Insufficient balance" + userAccountBalance);
             }
         } else
