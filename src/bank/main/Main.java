@@ -81,6 +81,7 @@ public class Main {
             System.out.println("1. Exit or  logout");
             System.out.println("2. Check Account balance");
             System.out.println("3. Fund Transfer");
+            System.out.println("4. See all Transactions");
             int choice = sc.nextInt();
 
             switch (choice) {
@@ -100,13 +101,18 @@ public class Main {
                 case 3:
                     main.FundTransfer(user);
                     break;
+                case 4:
+
+                    break;
                 default:
                     System.out.println("Invalid choice");
             }
         }
         System.out.println("You are an user");
     }
+    private void printTransactions(User user) {
 
+    }
     private void FundTransfer(User userDetails)
     {
         System.out.println("Enter payee userid");
@@ -151,13 +157,6 @@ public class Main {
     private Double CheckAccountBalance(String userid) {
         return userservice.CheckAccountBalance(userid);
     }
-    private void Anish()
-    {
-        System.out.println("Enter amount to transfer");
-    }
-    private void sakshi(){
-        System.out.println("Enter payee userid");
-        String payeeAccountId = sc.next();
-    }
+
 
 }
