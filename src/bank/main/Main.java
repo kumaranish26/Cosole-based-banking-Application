@@ -102,7 +102,7 @@ public class Main {
                     main.FundTransfer(user);
                     break;
                 case 4:
-
+                    System.out.println("See all Transactions");
                     break;
                 default:
                     System.out.println("Invalid choice");
