@@ -103,6 +103,7 @@ public class Main {
                     break;
                 case 4:
                     System.out.println("See all Transactions");
+                    System.out.println("Your transactions are:");
                     break;
                 default:
                     System.out.println("Invalid choice");
