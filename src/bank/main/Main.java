@@ -102,9 +102,9 @@ public class Main {
                     main.FundTransfer(user);
                     break;
                 case 4:
-                    System.out.println("See all Transactions");
-                    System.out.println("Your transactions are:");
-                        main.printTransactions(user);
+//                    System.out.println("See all Transactions");
+//                    System.out.println("Your transactions are:");
+//                        main.printTransactions(user);
                     break;
                 default:
                     System.out.println("Invalid choice");
