@@ -27,5 +27,9 @@ public class UserService {
         UserRepository userRepository=new UserRepository();
          return userRepository.transferAmount(from, to, amount);
     }
+    public void printTransactions(String userId)
+    {
+
+    }
 }
 
