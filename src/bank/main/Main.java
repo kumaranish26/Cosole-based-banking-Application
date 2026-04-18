@@ -13,7 +13,7 @@ public class Main {
     public static void main(String[] args) {
         Main main = new Main();
 
-        while (true) {
+        while(true) {
             System.out.println("Enter your username:");
             String username = sc.nextLine();
             System.out.println("Enter your password:");
@@ -102,9 +102,9 @@ public class Main {
                     main.FundTransfer(user);
                     break;
                 case 4:
-//                    System.out.println("See all Transactions");
-//                    System.out.println("Your transactions are:");
-//                        main.printTransactions(user);
+                    System.out.println("See all Transactions");
+                    System.out.println("Your transactions are:");
+                        main.printTransactions(user);
                     break;
                 default:
                     System.out.println("Invalid choice");
@@ -113,6 +113,8 @@ public class Main {
         System.out.println("You are an user");
     }
     private void printTransactions(User user) {
+        UserService userservice = new UserService();
+        userservice.printTransactions(user.getUsername());
 
     }
     private void FundTransfer(User userDetails)
