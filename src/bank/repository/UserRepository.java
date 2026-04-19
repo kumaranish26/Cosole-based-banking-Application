@@ -81,15 +81,15 @@ public class UserRepository
     }
     public void printTransactions(String userId)
     {
-//        List<Transaction>result=transactions.stream().filter(transaction -> transaction.getTransactionUserId().equals(userId)).collect(Collectors.toList());
-//        if(result.size()!=0)
-//        {
-//            result.forEach(System.out::println);
-//        }
-//        else
-//        {
-//            System.out.println("No transactions found for the user: " + userId);
-//        }
+        List<Transaction>result=transactions.stream().filter(transaction -> transaction.getTransactionUserId().equals(userId)).collect(Collectors.toList());
+        if(result.size()!=0)
+        {
+            result.forEach(System.out::println);
+        }
+        else
+        {
+            System.out.println("No transactions found for the user: " + userId);
+        }
     }
     public User getUser(String userId)
     {
