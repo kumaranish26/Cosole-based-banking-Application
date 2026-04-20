@@ -29,7 +29,8 @@ public class UserService {
     }
     public void printTransactions(String userId)
     {
-
+          UserRepository userRepository=new UserRepository();
+          userRepository.printTransactions(userId);
     }
 }
 
