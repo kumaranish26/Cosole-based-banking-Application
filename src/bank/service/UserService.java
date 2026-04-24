@@ -32,5 +32,9 @@ public class UserService {
           UserRepository userRepository=new UserRepository();
           userRepository.printTransactions(userId);
     }
+    public void checkIssue(String username,String password,String contact)
+    {
+
+    }
 }
 
