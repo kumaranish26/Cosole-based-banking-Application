@@ -38,6 +38,7 @@ public class Main {
             System.out.println("You are an administrator");
             System.out.println("1.Exit/logout");
             System.out.println("2.Create Customer account");
+            System.out.println("3.Print Transaction");
             int choice = sc.nextInt();
             sc.nextLine();
 
@@ -50,6 +51,11 @@ public class Main {
                     System.out.println("Add new customer account");
                     main.addNewCustomer();
                     break;
+                    case 3:
+                        System.out.println("Enter Customer ID");
+                        String customerID = sc.nextLine();
+                        printTransactions(getUSer(customerID));
+                        break;
                 default:
                     System.out.println("Invalid choice");
 
@@ -166,8 +172,8 @@ public class Main {
         System.out.println("Anish");
         return true;
     }
-    private void checkIssuse(User user) {
-
-    }
+//    private void checkIssuse(User user) {
+//
+//    }
 
 }
