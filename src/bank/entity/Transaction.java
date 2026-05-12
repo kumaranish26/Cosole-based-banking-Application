@@ -21,9 +21,9 @@ public class Transaction {
         this.finalBalance = finalBalance;
         this.transactionPerformedBy = transactionPerformedBy;
     }
-    public boolean checkIssue(User user) {
-
-    }
+//    public boolean checkIssue(User user) {
+//
+//    }
 
     public String getTransactionPerformedBy() {
         return transactionPerformedBy;
