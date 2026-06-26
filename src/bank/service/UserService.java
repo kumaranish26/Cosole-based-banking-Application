@@ -34,7 +34,9 @@ public class UserService {
     }
     public void checkIssue(String username,String password,String contact)
     {
-
+       // System.out.println("Checking Issue");
+       //
+        // UserRepository userRepository=new UserRepository();
     }
 }
 
