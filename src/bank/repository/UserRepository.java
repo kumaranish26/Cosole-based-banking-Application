@@ -13,12 +13,14 @@ public class UserRepository
      private static Set<User> users = new HashSet<User>();
      private static List<Transaction> transactions = new ArrayList<>();
      static {
-         User user1=new User("admin","admin","12345","admin",0.00);
+         User user1=new User("admin","admin","000000","admin",0.00);
          User user2=new User("user1","user1","123456","user",1000.00);
          User user3=new User("user2","user2","123457","user",2000.00);
+         User user4=new User("user3","user3","123458","user",3000.00);
          users.add(user1);
          users.add(user2);
          users.add(user3);
+         users.add(user4);
      }
 
     public  boolean transferAmount(String from, String to, double amount) {
